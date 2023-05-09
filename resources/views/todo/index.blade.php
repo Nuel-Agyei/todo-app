@@ -42,7 +42,7 @@
                             </td>
                             <td>
                                 <a class="btn btn-info m-2 btn-sm" href="#">Edit</a>
-                                <a class="btn btn-info btn-sm" href="#">View</a>
+                                <a class="btn btn-info btn-sm" href="{{route('todo.show', $todo->id)}}">View</a>
                                 <form action="">
                                     <input type="hidden" name="todo_id" value="{{$todo->id}}">
                                     <input type="submit" name="" class="btn btn-dark btn-sm" value="delete">

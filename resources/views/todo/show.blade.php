@@ -9,17 +9,20 @@
 
                 <div class="card-body">
 
-                    @if ($session('status'))
+                    @if (session('status'))
                     <div class="alert alert-danger" role="alert">
                         {{session('status')}}
                     </div>
                 @endif
 
-                    <b>Your task title is</b> {{$todo ->title}}
-                    <b>Your task description is</b> {{$todo ->description}}
+
+                    <b>Your task title is</b> {{$todo ->title}}<br/>
+                    <b>Your task description is</b> {{$todo ->description}}<br/>
+                    <a class="btn btn-primary" href="{{ url()->previous() }}">Go back</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
