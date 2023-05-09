@@ -18,7 +18,7 @@
 
                     <b>Your task title is</b> {{$todo ->title}}<br/>
                     <b>Your task description is</b> {{$todo ->description}}<br/>
-                    <a class="btn btn-primary" href="{{ url()->previous() }}">Go back</a>
+                    <a class="btn btn-sm btn-primary" href="{{ url()->previous() }}">Go back</a>
                 </div>
             </div>
         </div>

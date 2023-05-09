@@ -14,6 +14,13 @@
                         {{Session::get('alert-success')}}
                       </div>
                     @endif
+                    @if (Session::has('error'))
+                    <div class="alert alert-danger" role="alert">
+                        An error has occured!
+                        {{Session::get('error')}}
+                      </div>
+                    @endif
+                    <a class="btn btn-outline-primary" href="{{route('todo.create')}}">Add a task</a>
 
                   @if (count($todo)>0)
                   <table class="table">
@@ -41,9 +48,11 @@
 
                             </td>
                             <td>
-                                <a class="btn btn-info m-2 btn-sm" href="#">Edit</a>
+                                <a class="btn btn-info m-2 btn-sm" href="{{route('todo.edit', $todo->id)}}">Edit</a>
                                 <a class="btn btn-info btn-sm" href="{{route('todo.show', $todo->id)}}">View</a>
-                                <form action="">
+                                <form method="post" action="{{ route('todo.delete') }}" class="inner">
+                                    @csrf
+                                    @method('DELETE')
                                     <input type="hidden" name="todo_id" value="{{$todo->id}}">
                                     <input type="submit" name="" class="btn btn-dark btn-sm" value="delete">
                                 </form>
