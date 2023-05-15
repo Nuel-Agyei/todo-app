@@ -8,8 +8,8 @@
                 <div class="card-header">{{('Dashboard') }}</div>
 
                 <div class="card-body">
-
-                    @if ($session('status'))
+                    <a class="btn btn-outline-secondary" href="{{ route('todo.index') }}">Press me</a>
+                    @if (session('status'))
                     <div class="alert alert-danger" role="alert">
                         {{session('status')}}
                     </div>
